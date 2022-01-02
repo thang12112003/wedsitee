@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+/*
+bỏ đi và chuyển Sang Style.css cho làm h1 con của #center để áp dụng chung
+h1 {
+	width:600px;
+	color:red; background-color:#FC3;
+	text-align:center; 
+	margin-left:auto; margin-right:auto; 
+	margin-top:10px; margin-bottom:10px;	
+	}
+*/
+/*Style cho khung chứa các sản phẩm*/
+#content_sp {
+	width:600px; height:auto; /*để chiều cao tự động co giãn theo nội dung bên trong*/
+	/*border-width:1px;*/ /*độ dày đường viền*/
+	/*border-color:red;*/ /*màu đường viền*/
+	/*border-style:solid;*/ /*kiểu đường viền:nét liền, nét đứt....*/
+	/*border:1px red solid;*/ /* có thể viết gộp border: độ_dày màu kiểu; */
+	/*margin:5px auto;*/ /*Viết gộp: margin: 5px (top,bottom) auto (left, right)*/
+	overflow:auto;/*xử lý lỗi khi .sanpham đặt float:left thì content_sp sẽ tự động co giãn theo*/
+	}
+/*style cho từng sản phẩm sao cho mỗi dòng 3 sản phẩm*/
+.sanpham {
+	width:190px; /*width:190px + margin-left:5px + margin-right:5px = 200px*/
+	height:300px;
+	margin:5px; /*margin: 5px (top) 5px (right) 5px (bottom) 5px (left)*/
+	border:1px #FF9900 dashed;
+	border-radius:10px;
+	float:left;/*cho các khối div nằm cùng 1 dòng từ trái qua phải*/
+	/*box-sizing:content-box;*/ 
+	/*mặc định là content-box:kích thước thực tế = width+border+padding*/
+	box-sizing:border-box; /*để kích thước thực tế của khung không bị cộng thêm:border,padding*/
+	
+	}
+/*thiết kế style cho các thẻ img, h3, p thuộc class="sanpham" => không ảnh hưởng img chỗ khác*/
+.sanpham img {max-width:180px; max-height:220px; vertical-align:middle;}
+/*.sanpham :nth-child(1): con thứ 1,  .sanpham :nth-child(2)....*/
+.sanpham :nth-child(1) {color:green; text-align:center; margin:5px 5px; 
+			font-size:14px; }
+.sanpham :nth-child(2) { line-height:220px; text-align:center; margin:0px}
+.sanpham :nth-child(3) { color:#F90; text-align:center; margin-top:10px; font-size:14px}
+
+

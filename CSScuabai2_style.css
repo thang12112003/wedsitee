@@ -1,0 +1,77 @@
+
+@charset "utf-8";
+/* CSS Document */
+/* * {...} để thiết kế style chung cho mọi thẻ*/
+body { font-size:12px; font-family:Arial}
+* {margin:0px; padding:0px; font-size:12px; box-sizing:border-box}/* cái này là khung bên trong margin
+
+
+ ;font-size để làm tăng kích cỡ trong thẻ */
+#container {
+			width:1000px; /*nội dung trong khung là 1000 điểm ảnh*/
+			margin:0px auto; /*top,bottom=0px, left,rigth=auto*/
+			border:0px red solid;
+			}
+#header { width:100%; height:180px; /*chiều cao đặt bằng ảnh nền*/
+		 background-color:#999;
+		 background-image:url(images/banner-01.jpg);
+		  /*background-repeat:no-repeat; không lặp xếp lợp ảnh nền*/
+		 background-position:center;/*ảnh nền căn giữa*/
+		 background-size:cover; /*ảnh phủ kín khung*/
+		}
+#menu {width:100%; height:30px; background:#FC0;}
+#menu ul { padding:0px; margin:0px;}
+#menu ul li { list-style:none; float:left;padding:8px 15px; position:relative;background:#999}/*list-style:none bỏ biểu tượng dấu chấm*/
+#menu ul li a { color:#06F; text-decoration:none; font-weight:bold }
+#menu ul li a:hover { color:#F00}  
+#content {
+		width:100%; 
+		height:auto; /*tự co dãn theo nội dung div id=left,right,center bên trong*/ 
+		overflow:auto;/*do div id=left,right,center sử dụng float:left để nằm ngang*/
+		}
+#menu ul li ul { visibility:hidden; position:absolute; letf:0px; top:30px; opacity:0.8 }
+#menu ul li ul li { width:150px;background-color:#FC6; border-bottom:red 1px dashed}
+#menu ul li:hover ul { visibility:visible;}
+
+#left {width:200px; height:auto; background:#099; float:left}
+#center {width:600px; height:auto; float:left;}
+/*style cho các thẻ h1 là con trực tiếp của <div id=center>..</div>*/
+#center>h1 { background:#CCC; color:red; 
+			margin:5px; padding:10px; border-radius:10px;
+			font-size:16px;}
+/* thu nho hinh anh*/
+.sanpham {
+			box-sizing:border-box;/*để kích thước không cộng padding,border*/
+			width:190px;/*1 dòng hiển thị 3 sản phẩm, rộng = 190 * margin_left + margin_right=200px*/
+			height:270px;
+			margin:5px; 
+			border:1px red dashed; /*đường viền*/
+			border-radius:10px ; /*bo tròn 4 cạnh*/
+			padding:5px;
+			float:left;
+			text-align:center/*làm cho thẻ div nằm theo hàng ngang trái -> phải*/ 
+		 }
+.sanpham :nth-child(1) { color:blue; font-size:12px; margin:2px} /*con thứ 1 trong .sanpham*/
+.sanpham :nth-child(3) { color:red; font-weight:bold; margin-top:15px; font-size:14px} /*con thứ 3 trong .sanpham*/ 
+			
+					/* :hover {} để thiết kế style khi di chuột qua*/
+.sanpham:hover{
+						background-color:#F0C;
+						border:1px red solid;} /*viền bên ngoài */
+			/*Bộ chọn qua id, giống class nhưng thường áp dụng cho 1 thẻ độc lập
+			tạo tên mới #tenID và áp dụng cho 1 thẻ thông qua thuộc tính id="tenID" */
+	
+.sanpham img { 
+				width:auto; height:auto;/*để tự động co giãn đúng tỷ lệ ảnh gốc*/
+				max-width:160px; /*chiều ngang tối đa không quá 160px*/
+				max-height:200px;/*chiều cao tối đa không quá 200px*/
+				vertical-align:middle;
+				} 
+.anhsanpham {
+				line-height:200px;
+				height:200px; 
+			}
+#right {width:200px; height:auto; background:#6C6; float:left}		
+#footer {width:100%; height:80px; background:#999;}
+/* CSS Document */
+
